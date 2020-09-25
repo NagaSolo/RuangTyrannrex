@@ -18,7 +18,7 @@ Constraints:
 '''
 
 def palindrome(input_string):
-    if input_string == reversed(input_string): 
+    if input_string == ''.join(c for c in reversed(input_string)): 
         return 'YES'
     return 'NO'
 
