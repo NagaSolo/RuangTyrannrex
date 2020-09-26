@@ -1,11 +1,11 @@
 import React from 'react'
 // import Login from './components/Login/Login'
-import Apifetch from './components/Experimental/Apifetch'
+import Lapindromes from './components/Experimental/Lapindromes'
 
 function App() {
   return (
     <div>
-      <Apifetch />
+      <Lapindromes />
     </div>
   );
 }
