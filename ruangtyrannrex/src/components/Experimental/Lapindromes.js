@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
-export default function Apifetch() {
+export default function Lapindromes() {
   const [currentHome, setCurrentHome] = useState('Testing');
 
   useEffect(() => {
