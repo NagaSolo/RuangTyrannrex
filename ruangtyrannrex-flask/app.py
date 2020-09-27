@@ -10,4 +10,4 @@ def home():
 @app.route('/lapindromes')
 def lapindromes():
     the_string = 'kocok'
-    return f'{palindrome(the_string)}'
+    return {'Answer': palindrome(the_string)}
