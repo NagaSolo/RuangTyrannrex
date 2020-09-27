@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 app = Flask(__name__)
 
 from modules.lapindromes import palindrome
@@ -7,7 +7,10 @@ from modules.lapindromes import palindrome
 def home():
     return f'Ruang Tyrannrex'
 
-@app.route('/lapindromes')
+@app.route('/lapindromes', methods=['GET', 'POST'])
 def lapindromes():
-    the_string = 'kocok'
-    return {'Answer': palindrome(the_string)}
+    if request.method == 'POST':
+        the_string = request.values.get()
+        return {'Answer': palindrome(the_string)}
+    else:
+        return f'Value is unspecified'
