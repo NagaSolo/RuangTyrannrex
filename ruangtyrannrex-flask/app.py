@@ -16,3 +16,6 @@ def lapindromes():
     else:
         # return f'Value is unspecified'
         return render_template('lapindromes.html')
+
+if __name__ == "__main__":
+    app.run(debug=True)
