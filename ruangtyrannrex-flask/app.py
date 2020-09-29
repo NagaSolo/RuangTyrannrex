@@ -11,7 +11,7 @@ def home():
 def lapindromes():
     if request.method == 'POST':
         the_string = request.form["the_input"]
-        return render_template('lapindromes.html', answer=palindrome(the_string))
+        return render_template('lapindromes.html', answer=f'The answer is {palindrome(the_string)}')
         # return {'Answer': palindrome(the_string)}
     else:
         # return f'Value is unspecified'
