@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<h3>Reverse the given number</h3>
+<p>Somehow, no association with 007, or James Bond</p>
+<img src="{{url_for('static', filename='jbond007.jpg')}}" width="151" height="151" />
+<form method="post">
+    <input name="the_number" input_type='text' class="input_box" method='post' value='Reversed your number... '>
+    <input type="submit">
+</form>
+<div>
+    <output id="flow007Output" class="result_box" > {{ answer }} </output>
+</div>
