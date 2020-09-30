@@ -16,9 +16,16 @@
 #         break
 
 """With standard input answer"""
-while True:
-    notfortytwo = int(input())
-    if notfortytwo is not 42:
-        print(notfortytwo)
-    else:
-        break
+# while True:
+#     notfortytwo = int(input())
+#     if notfortytwo is not 42:
+#         print(notfortytwo)
+#     else:
+#         break
+
+'''Procedural'''
+def fortytwo(n):
+    try:
+        return int(n) == 42
+    except:
+        return False 
