@@ -2,6 +2,7 @@ from flask import Flask, request, render_template
 app = Flask(__name__)
 
 from modules.lapindromes import palindrome
+from modules.fortytwo import fortytwo
 
 @app.route('/')
 def home():
@@ -17,5 +18,12 @@ def lapindromes():
         # return f'Value is unspecified'
         return render_template('lapindromes.html')
 
+@app.route('/fortytwo', methods=['GET', 'POST'])
+def fortytworoute():
+    if request.method == 'POST':
+        the_string = request.form["the_answer"]
+        return render_template('fortytwo.html', answer=f'The answer is {fortytwo(the_string)}')
+    return render_template('fortytwo.html')
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
