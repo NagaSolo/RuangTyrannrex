@@ -87,19 +87,3 @@ for customer_budget in range(N):
 customer_budget_list.sort() # sort list inplace
 
 get_max_profit_from_budget(customer_budget_list)
-
-# # pseudo case for minimum value
-# print(min(customer_budget_list)*len(customer_budget_list))
-
-# # pseudo case for maximum value
-# print(max(customer_budget_list))
-
-# pseudo case for in between value
-"""
-    a = [n, n+1, n+2, n+3 ... n+n]
-    min = a[n]
-    max = a[n+n]
-    if a[n+1] == min; a[n+1]*len(a)
-    if a[n+1] != min; a[n+1]*(len(a)-n) 
-
-"""
