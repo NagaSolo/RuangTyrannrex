@@ -1,13 +1,17 @@
 '''Challenge: ZCO14003: Zonal Computing Olympiad 2014, 30 Nov 2013
 
 Summary:
-    You are developing a smartphone app. You have a list of potential customers for your app. Each customer has a budget and will buy the app at your declared price if and only if the price is less than or equal to the customer's budget.
+    You are developing a smartphone app. You have a list of potential customers for your app. 
+    Each customer has a budget and will buy the app at your declared price 
+    if and only if the price is less than or equal to the customer's budget.
 
 
-    You want to fix a price so that the revenue you earn from the app is maximized. Find this maximum possible revenue.
+    You want to fix a price so that the revenue you earn from the app is maximized. 
+    Find this maximum possible revenue.
 
 
-    For instance, suppose you have 4 potential customers and their budgets are 30, 20, 53 and 14. In this case, the maximum revenue you can get is 60 .
+    For instance, suppose you have 4 potential customers and their budgets are 30, 20, 53 and 14. 
+    In this case, the maximum revenue you can get is 60 .
 
 
 Input format:
@@ -87,3 +91,15 @@ Pseudocode:
 # customer_budget_list.sort() # sort list inplace
 
 # get_max_profit_from_budget(customer_budget_list)
+
+def max_profit_from_budget(budget_list):
+    sorted_cust = sorted(budget_list)
+    return max(el * len(sorted_cust[sorted_cust.index(el):]) for el in sorted_cust)
+
+if __name__ == "__main__":
+    tests = [
+        [4, 30, 20, 53, 14], # answer is 60
+        [5, 40, 3, 65, 33, 21] # answr is 99
+        ]
+    for t in tests:
+        print(max_profit_from_budget(t))
