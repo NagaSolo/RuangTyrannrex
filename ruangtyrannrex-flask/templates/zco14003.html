@@ -1,12 +1,21 @@
-<!DOCTYPE html>
-<h3>Optimum sale prices</h3>
-<p>Given minimum price your clients willing to spend,</p>
-<p>Set optimum price with maximum profit return</p>
-<img src="{{url_for('static', filename='optimum-sale-price.jpg')}}" width="151" height="151" />
-<form method="post">
-    <input name="the_budget" input_type='text' class="input_box" method='post' value='list of prices... '>
-    <input type="submit">
-</form>
-<div>
-    <output id="zco14003Output" class="result_box" > {{ answer }} </output>
-</div>
+{% extends "base.html" %}
+{% block title %}ZCO14003{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+{% block content %}
+    <h3>Optimum sale prices</h3>
+    <p>Given minimum price your clients willing to spend,</p>
+    <p>Set optimum price with maximum profit return</p>
+    <img src="{{url_for('static', filename='optimum-sale-price.jpg')}}" width="151" height="151" />
+    <form method="post">
+        <input name="the_budget" input_type='text' class="input_box" method='post' value='list of prices... '>
+        <input type="submit">
+    </form>
+    <div>
+        <output id="zco14003Output" class="result_box" > {{ answer }} </output>
+    </div>
+{% endblock %}
