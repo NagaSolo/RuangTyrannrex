@@ -1,16 +1,25 @@
-<!DOCTYPE html>
-<h3>Palindrome</h3>
-<p>A palindrome is a word, number, phrase, or other sequence of characters which reads the same backward as forward, 
-    such as madam, racecar.</p> 
-<p>There are also numeric palindromes, including date/time stamps using short digits 11/11/11 11:11 
-    and long digits 02/02/2020.</p> 
-<p>Sentence-length palindromes ignore capitalization, punctuation, and word boundaries</p>
-<img src="{{url_for('static', filename='Ambigram_palindrome-min.jpg')}}" width="151" height="151" />
-<p>The palindrome ΝΙΨΟΝ ΑΝΟΜΗΜΑΤΑ ΜΗ ΜΟΝΑΝ ΟΨΙΝ 'Wash your sins, not only your face' in Greek on a holy water font.</p>
-<form method="post">
-    <input name="the_input" input_type='text' class="input_box" method='post' value='is it palindrome?'>
-    <input type="submit">
-</form>
-<div>
-    <output id="palindromeOutput" class="result_box" > {{ answer }} </output>
-</div>
+{% extends "base.html" %}
+{% block title %}Lapindrome{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+{% block content %}
+    <h3>Palindrome</h3>
+    <p>A palindrome is a word, number, phrase, or other sequence of characters which reads the same backward as forward, 
+        such as madam, racecar.</p> 
+    <p>There are also numeric palindromes, including date/time stamps using short digits 11/11/11 11:11 
+        and long digits 02/02/2020.</p> 
+    <p>Sentence-length palindromes ignore capitalization, punctuation, and word boundaries</p>
+    <img src="{{url_for('static', filename='Ambigram_palindrome-min.jpg')}}" width="151" height="151" />
+    <p>The palindrome ΝΙΨΟΝ ΑΝΟΜΗΜΑΤΑ ΜΗ ΜΟΝΑΝ ΟΨΙΝ 'Wash your sins, not only your face' in Greek on a holy water font.</p>
+    <form method="post">
+        <input name="the_input" input_type='text' class="input_box" method='post' value='is it palindrome?'>
+        <input type="submit">
+    </form>
+    <div>
+        <output id="palindromeOutput" class="result_box" > {{ answer }} </output>
+    </div>
+{% endblock %}
