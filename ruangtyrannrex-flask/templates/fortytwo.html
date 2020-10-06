@@ -1,12 +1,23 @@
-<!DOCTYPE html>
-<h3>Life, Universe, and Everything</h3>
-<p>This program just referenced pop culture,</p>
-<p>The Hitchhiker's Guide To The Galaxy</p>
-<img src="{{url_for('static', filename='the-ultimate-answer.png')}}" width="151" height="151" />
-<form method="post">
-    <input name="the_answer" input_type='text' class="input_box" method='post' value='The answer to life, universe and everything?'>
-    <input type="submit">
-</form>
-<div>
-    <output id="fortyTwoOutput" class="result_box" > {{ answer }} </output>
-</div>
+{% extends "base.html" %}
+
+{% block head %}
+    <h1>{% block title %}LIFE{% endblock %}</h1>
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <h3>Life, Universe, and Everything</h3>
+    <p>This program just referenced pop culture,</p>
+    <p>The Hitchhiker's Guide To The Galaxy</p>
+    <img src="{{url_for('static', filename='the-ultimate-answer.png')}}" width="151" height="151" />
+    <form method="post">
+        <input name="the_answer" input_type='text' class="input_box" method='post' value='The answer to life, universe and everything?'>
+        <input type="submit">
+    </form>
+    <div>
+        <output id="fortyTwoOutput" class="result_box" > {{ answer }} </output>
+    </div>
+{% endblock %}

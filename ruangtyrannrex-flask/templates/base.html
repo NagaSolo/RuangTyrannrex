@@ -7,11 +7,15 @@
     {% endblock %}
   </head>
   <body>
-    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="content">
+      {% block content %}{% endblock %}
+    </div>
+  </body>
+  <footer>
     <div id="footer">
       {% block footer %}
       &copy; Copyright 2020 by <a href="http://domain.invalid/">RuangTyrannrex</a>.
       {% endblock %}
     </div>
-  </body>
+  </footer>
 </html>
