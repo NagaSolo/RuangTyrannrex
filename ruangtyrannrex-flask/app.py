@@ -8,7 +8,23 @@ from modules.zco14003 import max_profit_from_budget
 
 @app.route('/')
 def home():
-    return {}
+    return render_template('index.html')
+
+@app.route('/fortytworoute')
+def route_life():
+    return render_template('fortytwo.html')
+
+@app.route('/flow_007')
+def route_flow007():
+    return render_template('flow007.html')
+
+@app.route('/lapindromes')
+def route_lapindromes():
+    return render_template('lapindromes.html')
+
+@app.route('/route_zco14003')
+def route_zco14003():
+    return render_template('zco14003.html')
 
 @app.route('/lapindromes', methods=['GET', 'POST'])
 def lapindromes():
