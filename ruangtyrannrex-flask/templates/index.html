@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <h1>{% block title %}HOME{% endblock %}</h1>
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <h3>Some might said, we dreamt too high</h3>
+    <div>
+        <ul>
+            <li><p><a href="{{ url_for('fortytworoute') }}">LIFE -> /fortytwo</a></p></li>
+            <li><p><a href="{{ url_for('flow_007') }}">FLOW007 -> /flow007</a></p></li>
+            <li><p><a href="{{ url_for('lapindromes') }}">LAPINDROMES -> /lapindromes</a></p></li>
+            <li><p><a href="{{ url_for('route_zco14003') }}">ZCO14003 -> /zco14003</a></p></li>
+        </ul>
+    </div>
+{% endblock %}
