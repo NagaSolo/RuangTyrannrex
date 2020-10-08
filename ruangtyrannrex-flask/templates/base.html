@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head class='page'>
-    {% block head %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>{% block title %}{% endblock %} - RuangTyrannrex</title>
-    {% endblock %}
+  <head>
+    <div class='page'>
+      {% block head %}
+      <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+      <title>{% block title %}{% endblock %} - RuangTyrannrex</title>
+      {% endblock %}
+    </div>
   </head>
   <body class='body'>
     <div id="content" class='page'>
