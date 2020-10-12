@@ -4,9 +4,9 @@ from config import PORT
 
 if __name__ == "__main__":
     uvicorn.run(
-        "main:app", 
+        "module:app", 
         host='0.0.0.0', 
-        port=int(PORT), 
+        port=int(PORT),
         reload=True,
         debug=True,
         workers= 1
