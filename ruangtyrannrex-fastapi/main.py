@@ -2,9 +2,17 @@ from modules import app, templates
 
 from typing import Optional
 
+from fastapi import FastAPI
 from fastapi.requests import Request
-
 from fastapi.responses import HTMLResponse
+
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+
+app = FastAPI()
+
+# app.mount('/static', StaticFiles(directory='./modules/static', name='static'))
+templates = Jinja2Templates(directory='/modules/templates')
 
 @app.get('/', response_class=HTMLResponse)
 async def home(request: Request):
