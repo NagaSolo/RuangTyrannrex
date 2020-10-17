@@ -1,12 +1,26 @@
 {% extends "base.html" %}
 
 {% block head %}
-    <h1>{% block title %}LIFE{% endblock %}</h1>
+    <h1>{% block title %}{% endblock %}</h1>
     {{ super() }}
     <style type="text/css">
         .important { color: #336699; }
     </style>
 {% endblock %}
 {% block content %}
-    <h3>Some might said, we dreamt too high</h3>
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>LIFE</h3>
+        </div>
+        <div class="col-sm-12">
+            <p>Image</p>
+        </div>
+        <div class="col-sm-12">
+            <p>Explanation</p>
+            <p>Some might said, we dreamt too high</p>
+        </div>
+        <div class="col-sm-12">
+            <p>Forms</p>
+        </div>
+    </div>
 {% endblock %}
