@@ -20,7 +20,13 @@
             <p>Some might said, we dreamt too high</p>
         </div>
         <div class="col-sm-12">
-            <p>Forms</p>
+            <form method="post">
+                <input name="the_answer" input_type='text' class="input_box" method='post' value='The answer to life, universe and everything?'>
+                <input type="submit">
+            </form>
+            <div>
+                <output id="fortyTwoOutput" class="result_box" >The given answer is {{ answer }} </output>
+            </div>
         </div>
     </div>
 {% endblock %}
