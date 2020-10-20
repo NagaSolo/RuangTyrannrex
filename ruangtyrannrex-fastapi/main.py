@@ -7,7 +7,7 @@ from starlette.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
 from modules.fortytwo import fortytwo
-from modules.flow007 import reversal
+from modules.flow007 import num_reversal
 from modules.lapindromes import palindrome
 # from modules.zco14003 import zco14003
 
@@ -32,6 +32,11 @@ async def fortytwo_post(request: Request, the_answer: int = Form(...)):
 @app.get('/flow007', response_class=HTMLResponse)
 async def flow_007(request: Request):
     return templates.TemplateResponse('flow007.html', {'request' : request})
+
+@app.post('/flow007', response_class=HTMLResponse)
+async def flow_007_post(request: Request, the_number : int = Form(...)):
+    answer = num_reversal(the_number)
+    return templates.TemplateResponse('flow007.html', context={'request' : request, 'answer' : answer})
 
 @app.get('/lapindromes', response_class=HTMLResponse)
 async def lapindrome(request: Request):

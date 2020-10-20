@@ -31,7 +31,7 @@ Pseudocode:
 #     print(combined_number)
 
 ''' Backend Module '''
-def reversal(n):
+def num_reversal(n):
     return int(str(n)[::-1])
 
 # if __name__ == "__main__":
