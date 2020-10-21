@@ -42,6 +42,11 @@ async def flow_007_post(request: Request, the_number : int = Form(...)):
 async def lapindrome(request: Request):
     return templates.TemplateResponse('lapindromes.html', {'request' : request})
 
+@app.post('/lapindromes', response_class=HTMLResponse)
+async def lapindrome_post(request: Request, the_string : str = Form(...)):
+    answer = palindrome(the_string)
+    return templates.TemplateResponse('lapindromes.html', context={'request' : request, 'answer' : answer})
+
 @app.get('/zco14003', response_class=HTMLResponse)
 async def opt_prices(request: Request):
     return templates.TemplateResponse('zco14003.html', {'request' : request})

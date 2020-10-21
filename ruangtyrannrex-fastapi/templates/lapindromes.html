@@ -9,18 +9,32 @@
 {% endblock %}
 {% block content %}
     <div class="row">
-        <div class="col-sm-12">
+        <div class="container">
             <h3>LAPINDROMES</h3>
         </div>
-        <div class="col-sm-12">
+        <div class="container">
             <p>Image</p>
         </div>
-        <div class="col-sm-12">
+        <div class="container">
             <p>Explanation</p>
             <p>Some might said, we dreamt too high</p>
         </div>
-        <div class="col-sm-12">
-            <p>Forms</p>
+        <div class="container">
+            <div class='form-group'>
+                <form method="post">
+                    <div>
+                        <input name="the_string" input_type='text' class="form-control" method='post' value='Is it palindromic...'>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary">Check</button>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <output id="lapindromesOutput" class="result_box" >
+                    <h5>{{ answer }}</h5>
+                </output>
+            </div>
         </div>
     </div>
 {% endblock %}

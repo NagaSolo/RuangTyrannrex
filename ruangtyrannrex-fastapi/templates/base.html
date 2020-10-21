@@ -16,16 +16,14 @@
     </div>
   </header>
   <body class='body'>
-    <div id="content" class='page'>
+    <div class='container-fluid'>
       {% block content %}{% endblock %}
       <p><a href="{{ url_for('home') }}"> Back to index </a></p>
     </div>
   </body>
-  <footer class='page'>
-    <div id="footer">
-      {% block footer %}
-      &copy; Copyright 2020 by <a href="http://domain.invalid/">RuangTyrannrex</a>.
-      {% endblock %}
+  <footer>
+    <div class="container-fluid">
+      <div class="container">&copy; Copyright 2020 by: <a href="http://domain.invalid/">RuangTyrannrex</a>.</div>
     </div>
   </footer>
 </html>
