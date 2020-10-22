@@ -8,14 +8,18 @@
     </style>
 {% endblock %}
 {% block content %}
-    <h3>HOME</h3>
-    <h3>Some might said, we dreamt too high</h3>
-    <div>
-        <ul>
-            <li><a href="{{ url_for('fortytwo_route') }}">LIFE -> /fortytwo</a></li>
-            <li><a href="{{ url_for('flow_007') }}">FLOW007 -> /flow007</a></li>
-            <li><a href="{{ url_for('lapindrome') }}">LAPINDROMES -> /lapindromes</a></li>
-            <li><a href="{{ url_for('opt_prices') }}">ZCO14003 -> /zco14003</a></li>
-        </ul>
+    <div class="row">
+        <div class="col-sm-4">
+            <h3>Index</h3>
+            <ul>
+                <li><a href="{{ url_for('fortytwo_route') }}">LIFE -> /fortytwo</a></li>
+                <li><a href="{{ url_for('flow_007') }}">FLOW007 -> /flow007</a></li>
+                <li><a href="{{ url_for('lapindrome') }}">LAPINDROMES -> /lapindromes</a></li>
+                <li><a href="{{ url_for('opt_prices') }}">ZCO14003 -> /zco14003</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-8">
+            <h5>Some might said, we dreamt too high</h5>
+        </div>
     </div>
 {% endblock %}

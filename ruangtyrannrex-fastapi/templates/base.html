@@ -15,15 +15,17 @@
       <h3>Ruangan Tyrannrex</h3>
     </div>
   </header>
-  <body class='body'>
+  <body class='col-12-sm'>
     <div class='container-fluid'>
       {% block content %}{% endblock %}
       <p><a href="{{ url_for('home') }}"> Back to index </a></p>
     </div>
   </body>
   <footer>
-    <div class="container-fluid">
-      <div class="container">&copy; Copyright 2020 by: <a href="http://domain.invalid/">RuangTyrannrex</a>.</div>
+    <div class="col-12-sm">
+      <div class="jumbotron text-center">
+        &copy; Copyright 2020 by: <a href="http://domain.invalid/">RuangTyrannrex</a>.
+      </div>
     </div>
   </footer>
 </html>

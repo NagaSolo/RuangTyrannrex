@@ -9,23 +9,26 @@
 {% endblock %}
 {% block content %}
     <div class="row">
-        <div class="col-sm-12">
-            <h3>FLOW007</h3>
-        </div>
-        <div class="col-sm-12">
+        <div class="col-sm-4">
+            <h5>FLOW007</h5>
             <p>Image</p>
-        </div>
-        <div class="col-sm-12">
             <p>Explanation</p>
             <p>Some might said, we dreamt too high</p>
         </div>
-        <div class="col-sm-12">
+        <div class="col-sm-8">
             <form method="post">
                 <input name="the_number" input_type='text' class="input_box" method='post' value='Reversed your number...'>
                 <input type="submit">
             </form>
+            <br>
             <div>
-                <output id="flow007Output" class="result_box" >The given answer is {{ answer }} </output>
+                <output id="flow007Output" class="result_box">
+                    {% if answer %}
+                        <h5>The given answer is {{ answer }}</h5>
+                    {% else %}
+                        <h5>Your number to be reversed</h5>
+                    {% endif %}
+                </output>
             </div>
         </div>
     </div>

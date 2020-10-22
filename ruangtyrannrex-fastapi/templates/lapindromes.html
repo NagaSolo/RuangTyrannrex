@@ -9,25 +9,18 @@
 {% endblock %}
 {% block content %}
     <div class="row">
-        <div class="container">
-            <h3>LAPINDROMES</h3>
-        </div>
-        <div class="container">
+        <div class="col-sm-4">
+            <h5>LAPINDROMES</h5>
             <p>Image</p>
-        </div>
-        <div class="container">
             <p>Explanation</p>
             <p>Some might said, we dreamt too high</p>
         </div>
-        <div class="container">
+        <div class="col-sm-8">
             <div class='form-group'>
                 <form method="post">
-                    <div>
-                        <input name="the_string" input_type='text' class="form-control" method='post' value='Is it palindromic...'>
-                    </div>
-                    <div>
-                        <button type="submit" class="btn btn-primary">Check</button>
-                    </div>
+                    <input name="the_string" input_type='text' class="form-control" method='post' value='Is it palindromic...'>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Check</button>
                 </form>
             </div>
             <div>
