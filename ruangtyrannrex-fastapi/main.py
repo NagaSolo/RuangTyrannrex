@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, List
 
 from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse
@@ -9,6 +9,7 @@ from fastapi.templating import Jinja2Templates
 from modules.fortytwo import fortytwo
 from modules.flow007 import num_reversal
 from modules.lapindromes import palindrome
+from modules.zco14003 import graphing, max_profit_from_budget, all_profits_from_prices
 # from modules.zco14003 import zco14003
 
 app = FastAPI()
@@ -50,6 +51,20 @@ async def lapindrome_post(request: Request, the_string : str = Form(...)):
 @app.get('/zco14003', response_class=HTMLResponse)
 async def opt_prices(request: Request):
     return templates.TemplateResponse('zco14003.html', {'request' : request})
+
+@app.post('/zco14003', response_class=HTMLResponse)
+def opt_prices_output(request : Request, the_price_list : List[int] = Form(...)):
+    # the_graph = graphing(the_price_list)
+    max_profit = max_profit_from_budget(the_price_list)
+    all_profits = all_profits_from_prices(the_price_list)
+    return templates.TemplateResponse(
+        'zco14003.html', 
+        context={
+            'request' : request,
+            'profits' : all_profits,
+            # 'the_graph' : the_graph,
+            'answer' : max_profit
+        })
 
 # @app.get("/items/{item_id}")
 # async def read_item(item_id: int, q: Optional[str] = None):

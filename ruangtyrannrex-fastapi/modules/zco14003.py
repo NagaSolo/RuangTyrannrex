@@ -91,15 +91,33 @@ Pseudocode:
 # customer_budget_list.sort() # sort list inplace
 
 # get_max_profit_from_budget(customer_budget_list)
+from pygal import Line
 
 def max_profit_from_budget(budget_list):
     sorted_cust = sorted(budget_list)
     return max(el * len(sorted_cust[sorted_cust.index(el):]) for el in sorted_cust)
 
-if __name__ == "__main__":
-    tests = [
-        [4, 30, 20, 53, 14], # answer is 60
-        [5, 40, 3, 65, 33, 21] # answr is 99
-        ]
-    for t in tests:
-        print(max_profit_from_budget(t))
+def all_profits_from_prices(budget_list):
+    sorted_cust = sorted(budget_list)
+    return [el * len(sorted_cust[sorted_cust.index(el):]) for el in sorted_cust]
+
+def graphing(budget_list):
+    the_graph = Line()
+    the_graph.title = 'Maximum profits based on given prices'
+    the_graph.x_labels = sorted(budget_list)
+    the_graph.add('Profits', all_profits_from_prices(budget_list))
+
+    # option to save to local dir
+    # the_graph.render_to_file('profits.svg')
+    return the_graph.render_data_uri()
+
+# # driver, cli app
+# if __name__ == "__main__":
+#     tests = [
+#         [4, 30, 20, 53, 14], # answer is 60
+#         [5, 40, 3, 65, 33, 21] # answer is 99
+#     ]
+#     for t in tests:
+#         print(max_profit_from_budget(t))
+#         print(all_profits_from_prices(t))
+#         graphing(t)

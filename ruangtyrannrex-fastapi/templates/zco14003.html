@@ -16,7 +16,40 @@
             <p>Some might said, we dreamt too high</p>
         </div>
         <div class="col-sm-8">
-            <p>Forms</p>
+            <div class='form-group'>
+                <form method="post">
+                    <input 
+                        name="the_price_list" 
+                        input_type='number' 
+                        class="form-control" 
+                        method='post' 
+                        value='Input you price list in this format e.g: 1, 23, 5, 7, 41 '
+                        multiple>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Check</button>
+                </form>
+            </div>
+            <div>
+                <output id="zco14003Output" class="result_box" >
+                    <div class="container">
+                        {% if answer %}
+                            <h5>Recommendable setting price for product is {{ answer }}</h5>
+                        {% else %}
+                            <h5>No given prices</h5>
+                        {% endif %}
+                    </div>
+                    <div class="container">
+                        {% for p in profits %}
+                            <p>{{ p }}</p>
+                        {% endfor %}
+                        <!-- {% if the_graph %}
+                            <embed type="image/svg+xml" src={{the_graph|safe}} style='max-width:1000px'/>
+                        {% else %}
+                            <h5>Input price list, and then check</h5>
+                        {% endif %} -->
+                    </div>
+                </output>
+            </div>
         </div>
     </div>
 {% endblock %}
