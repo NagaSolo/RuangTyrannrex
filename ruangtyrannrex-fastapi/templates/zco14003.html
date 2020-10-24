@@ -19,12 +19,11 @@
             <div class='form-group'>
                 <form method="post">
                     <input 
-                        name="the_price_list" 
-                        input_type='number' 
+                        name="the_price" 
+                        input_type='text' 
                         class="form-control" 
                         method='post' 
-                        value='Input you price list in this format e.g: 1, 23, 5, 7, 41 '
-                        multiple>
+                        value='Input you price list in this format e.g: 1,23,5,7,41 '>
                     <br>
                     <button type="submit" class="btn btn-primary">Check</button>
                 </form>
@@ -39,14 +38,11 @@
                         {% endif %}
                     </div>
                     <div class="container">
-                        {% for p in profits %}
-                            <p>{{ p }}</p>
-                        {% endfor %}
-                        <!-- {% if the_graph %}
+                        {% if the_graph %}
                             <embed type="image/svg+xml" src={{the_graph|safe}} style='max-width:1000px'/>
                         {% else %}
                             <h5>Input price list, and then check</h5>
-                        {% endif %} -->
+                        {% endif %}
                     </div>
                 </output>
             </div>
