@@ -53,16 +53,15 @@ async def opt_prices(request: Request):
     return templates.TemplateResponse('zco14003.html', {'request' : request})
 
 @app.post('/zco14003', response_class=HTMLResponse)
-def opt_prices_output(request : Request, the_price_list : List[int] = Form(...)):
-    # the_graph = graphing(the_price_list)
+def opt_prices_output(request : Request, the_price : str = Form(...)):
+    the_price_list = list(map(lambda x: int(x), the_price.split(','))) # process input form to list of string
     max_profit = max_profit_from_budget(the_price_list)
-    all_profits = all_profits_from_prices(the_price_list)
+    the_graph = graphing(the_price_list)
     return templates.TemplateResponse(
         'zco14003.html', 
         context={
             'request' : request,
-            'profits' : all_profits,
-            # 'the_graph' : the_graph,
+            'the_graph' : the_graph,
             'answer' : max_profit
         })
 
