@@ -1,11 +1,7 @@
 aiofiles==0.6.0
-click==7.1.2
-dataclasses==0.8
 fastapi==0.61.2
-h11==0.11.0
 Jinja2==2.11.2
 MarkupSafe==1.1.1
-pkg-resources==0.0.0
 pydantic==1.7.2
 pygal==2.4.0
 python-multipart==0.0.5
